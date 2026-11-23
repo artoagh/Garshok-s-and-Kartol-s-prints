@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#171717">
-  <title>Garshok’s and Kartol’s Prints</title>
+  <title>GnK Prints</title>
 
   <style>
     :root {
@@ -40,7 +40,7 @@
     .brand {
       font-weight: 800;
       letter-spacing: .04em;
-      font-size: clamp(16px, 2.4vw, 22px);
+      font-size: clamp(20px, 2.4vw, 26px);
     }
 
     .brand span { color: var(--accent); }
@@ -107,6 +107,8 @@
       padding: 15px 16px;
       font-size: 15px;
     }
+
+    input:focus { border-color: var(--accent); }
 
     button, .email-link {
       border: 0;
@@ -192,26 +194,31 @@
 
 <header>
   <div class="brand">
-    GARSHOK’S <span>&</span> KARTOL’S PRINTS
+    GnK <span>PRINTS</span>
   </div>
+
   <div class="tag">Made with a 3D printer</div>
 </header>
 
 <main>
 
   <section class="hero">
-    <div class="eyebrow">Welcome to our print workshop</div>
+
+    <div class="eyebrow">
+      Welcome to our print workshop
+    </div>
 
     <h1 id="greeting">
       Hello, <span>there.</span>
     </h1>
 
     <p class="intro">
-      Welcome to Garshok’s and Kartol’s Prints —
-      a small 3D-printing project where ideas become real objects.
+      Welcome to GnK Prints — a small 3D-printing
+      project where ideas become real objects.
     </p>
 
     <form class="name-form" id="nameForm">
+
       <input
         id="visitorName"
         type="text"
@@ -223,24 +230,33 @@
       <button type="submit">
         Set my greeting
       </button>
+
     </form>
+
   </section>
 
   <section class="contact" id="contact">
 
     <div>
-      <div class="eyebrow">Have a question?</div>
 
-      <h2>Let’s talk about your print.</h2>
+      <div class="eyebrow">
+        Have a question?
+      </div>
+
+      <h2>
+        Let’s talk about your print.
+      </h2>
 
       <p>
         Want to ask about a 3D-printed part,
         discuss an idea, or find out more?
         Send us an email and tell us what you have in mind.
       </p>
+
     </div>
 
     <div class="email-card">
+
       <p class="tag">Contact email</p>
 
       <p class="address">
@@ -253,6 +269,7 @@
       >
         Email us
       </a>
+
     </div>
 
   </section>
@@ -263,7 +280,9 @@
       Text developer
     </div>
 
-    <h2>About this section</h2>
+    <h2>
+      About this section
+    </h2>
 
     <p>
       This is the description area for the contact block.
@@ -276,20 +295,23 @@
 </main>
 
 <footer>
-  © 2026 Garshok’s and Kartol’s Prints
+  © 2026 GnK Prints
 </footer>
 
 <script>
+
   const form = document.getElementById('nameForm');
   const input = document.getElementById('visitorName');
   const greeting = document.getElementById('greeting');
 
   function showGreeting(name) {
+
     const safeName = name.trim();
 
     greeting.textContent = safeName
       ? `Hello, ${safeName}!`
       : 'Hello, there.';
+
   }
 
   const savedName = localStorage.getItem('printsVisitorName');
@@ -300,6 +322,7 @@
   }
 
   form.addEventListener('submit', function(event) {
+
     event.preventDefault();
 
     const name = input.value.trim();
@@ -310,8 +333,11 @@
     }
 
     localStorage.setItem('printsVisitorName', name);
+
     showGreeting(name);
+
   });
+
 </script>
 
 </body>
